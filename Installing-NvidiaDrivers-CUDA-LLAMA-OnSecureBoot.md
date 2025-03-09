@@ -313,11 +313,11 @@ https://github.com/ggml-org/llama.cpp/blob/master/docs/build.md
 
 
 
-Uncertain Instructions
+## Uncertain Instructions
 
 Here are some issues with solutions, though I don't think you need to follow these.
 
-Blacklisting Nouveau
+### Blacklisting Nouveau
 
 Create the /etc/modprobe.d/blacklist-nouveau.conf file (may be redundant in the /etc/modprobe.d/nvidia.conf file)
 
@@ -330,7 +330,7 @@ options nouveau modeset=0
 ```
 
 
-Updating initramfs
+### Updating initramfs
 
 The install process should do this for you, but feel free to make sure the drivers are properly loaded on boot.
 
@@ -340,9 +340,11 @@ sudo reboot
 ```
 
 
-Getting rid of the ACPI Errors
+### Getting rid of the ACPI Errors
 
 For whatever reason I keep getting these errors. I don't know what's causing them. Maybe it's a reading comprehension issue from me reading the logs. Here's how to force ACPI to be enabled and to stop the errors from logging.
+
+Note: I actually removed this from my install, I was troubleshooting the "No login screen" issue below and thought ACPI was to blame initially.
 
 ```
 sudo vim /etc/default/grub
@@ -362,6 +364,6 @@ sudo reboot
 ```
 
 
-No login screen (my own goof)
+### No login screen (my own goof)
 
 Make sure there's not a third monitor that's not on or is being used by another computer. I was sharing a monitor with another computer, and the login screen was showing up on that monitor while it was occupied.
