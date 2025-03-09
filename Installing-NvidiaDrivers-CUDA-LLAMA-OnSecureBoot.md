@@ -44,8 +44,9 @@ Add contrib and non-free to /etc/apt/sources.list
 sudo vim /etc/apt/sources.list
 
 # In vim
+#   (i to insert text)
 :%s/main/main contrib non-free/g
-:wq
+#   (ESC to stop inserting, :wq to exit)
 
 # update apt
 sudo apt update
@@ -190,6 +191,7 @@ Now that the cuda drivers are installed, let's add it to our path by creating a 
 sudo vim /etc/profile.d/cuda.sh
 
 # Add the following lines
+#   (i to insert text)
 export PATH=$PATH:/usr/local/cuda/bin
 
 # Set permissions to rw for root, and r for everyone else
@@ -197,6 +199,8 @@ sudo chmod 644 /etc/profile.d/cuda.sh
 
 # Source the script
 source /etc/profile.d/cuda.sh
+
+#   (ESC to stop inserting, :wq 
 ```
 
 Feel free to add the export to your path at .profile or .bashrc instead, if it isn't sourcing the script on boot.
@@ -230,6 +234,7 @@ If you'd like to add it the same way the cuda drivers were added
 sudo vim /etc/profile.d/llama.sh
 
 # Add the following lines
+#   (i to insert text)
 export PATH=$PATH:/home/myUser/llama.cpp/build/bin
 
 # Set permissions to rw for root, and r for everyone else
@@ -237,6 +242,8 @@ sudo chmod 644 /etc/profile.d/llama.sh
 
 # Source the script
 source /etc/profile.d/llama.sh
+
+#   (ESC to stop inserting, :wq to exit)
 ```
 
 Now lets download an example and test if it works. Refer to https://huggingface.co for gguf files to test
@@ -287,10 +294,12 @@ Create the /etc/modprobe.d/blacklist-nouveau.conf file (may be redundant in the 
 
 ```
 sudo vim /etc/modprobe.d/blacklist-nouveau.conf
+
 # Write the following
+#   (i to insert text)
 blacklist nouveau
 options nouveau modeset=0
-:wq
+#   (ESC to stop inserting, :wq to exit)
 ```
 
 
@@ -314,11 +323,12 @@ Note: I actually removed this from my install, I was troubleshooting the "No log
 sudo vim /etc/default/grub
 
 # Add the following to GRUB_CMDLINE_LINUX_DEFAULT
+#   (i to insert text)
 acpi=force pci=noaer
 
 # Should look similar to this
 GRUB_CMDLINE_LINUX_DEFAULT="quiet acpi=force pci=noaer"
-:wq
+#   (ESC to stop inserting, :wq to exit)
 
 # Run the following to update grub
 sudo update-grub
