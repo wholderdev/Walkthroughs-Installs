@@ -153,7 +153,7 @@ sudo dpkg-reconfigure dkms
 
 
 
-Installing CUDA and NVIDIA drivers
+## Installing CUDA and NVIDIA drivers
 
 Go through the following install process. Here's a link to the nvidia instructions: https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Debian&target_version=12&target_type=deb_local
 
